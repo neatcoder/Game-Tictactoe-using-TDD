@@ -2,8 +2,11 @@ var TicTacToe = require('./views/TicTacToe');
 
 function makeTicTacToeGameGrid() {
     document.body.innerHTML='<div class="grid-container" id="grid"></div>';
+    var element;
     for(i=0; i<9; i++){
-        document.getElementById('grid').appendChild('<div class="grid-item"></div>');
+        element = document.createElement('div');
+        element.className = 'grid-item';
+        document.getElementById('grid').appendChild(element);
     }
 }
 

@@ -15,12 +15,16 @@ class TicTacToe {
 
     whenClicksMarkX(event) {
         event.target.innerText = 'X';
-        this.turnOfPlayer = "O";
+        this.changePlayerTurn("O")
     }
 
     whenClicksMarkO(event) {
         event.target.innerText = 'O';
-        this.turnOfPlayer = "X";
+        this.changePlayerTurn("X")
+    }
+
+    changePlayerTurn(player) {
+        this.turnOfPlayer = player;
     }
 };
 module.exports = TicTacToe;

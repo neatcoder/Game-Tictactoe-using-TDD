@@ -20,6 +20,7 @@ class TicTacToe {
 
     whenClicksMarkO(event) {
         event.target.innerText = 'O';
+        this.turnOfPlayer = "X";
     }
 };
 module.exports = TicTacToe;

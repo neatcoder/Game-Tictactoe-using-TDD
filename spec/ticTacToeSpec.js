@@ -44,4 +44,14 @@ describe("TicTacToe Game", () => {
 
         expect(ticTacToe.whenClicksMarkO).toHaveBeenCalledWith(event);
     });
+    
+    it('should MARK "X" if clicked in a box after O', () => {
+        var event = {};
+        ticTacToe.turnOfPlayer = 'X';
+        ticTacToe.whenClicksMarkX = jasmine.createSpy();
+
+        ticTacToe.whenClicksMarkSomething(event);
+
+        expect(ticTacToe.whenClicksMarkX).toHaveBeenCalledWith(event);
+    });
 })

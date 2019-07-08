@@ -65,12 +65,10 @@ describe("TicTacToe Game", () => {
                 innerText: 'X'
             }
         };
-        ticTacToe.whenClicksMarkX = jasmine.createSpy();
-        ticTacToe.whenClicksMarkO = jasmine.createSpy();
+        ticTacToe.whenClicksMarkSomething = jasmine.createSpy();
 
-        ticTacToe.whenClicksMarkSomething(event);
+        ticTacToe.handleClickInTheBox(event);
 
-        expect(ticTacToe.whenClicksMarkX).not.toHaveBeenCalled();
-        expect(ticTacToe.whenClicksMarkO).not.toHaveBeenCalled();
+        expect(ticTacToe.whenClicksMarkSomething).not.toHaveBeenCalled();
     });
 })

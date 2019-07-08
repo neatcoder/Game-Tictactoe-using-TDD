@@ -13,7 +13,7 @@ function makeTicTacToeGameGrid() {
 makeTicTacToeGameGrid();
 var tictactoe = new TicTacToe();
 
-tictactoe.whenClicksMarkSomething = tictactoe.whenClicksMarkSomething.bind(tictactoe);
+tictactoe.handleClickInTheBox = tictactoe.handleClickInTheBox.bind(tictactoe);
 for (const element of document.getElementsByClassName('grid-item')) {
-    element.addEventListener('click', tictactoe.whenClicksMarkSomething, false);
+    element.addEventListener('click', tictactoe.handleClickInTheBox, false);
 }

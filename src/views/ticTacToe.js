@@ -6,11 +6,17 @@ class TicTacToe {
     }
 
     whenClicksMarkSomething(event) {
-        if (this.turnOfPlayer === "X") {
-            this.whenClicksMarkX(event);
-        } else {
-            this.whenClicksMarkO(event);
+        if (false === this.isSomethingFilledInTheBox(event)) {
+            if (this.turnOfPlayer === "X") {
+                this.whenClicksMarkX(event);
+            } else {
+                this.whenClicksMarkO(event);
+            }
         }
+    }
+
+    isSomethingFilledInTheBox(event) {
+        return event.target.innerText === "X" ? true : false;
     }
 
     whenClicksMarkX(event) {

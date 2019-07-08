@@ -38,20 +38,39 @@ describe("TicTacToe Game", () => {
     it('should MARK "O" if clicked in a box after X', () => {
         var event = {};
         ticTacToe.turnOfPlayer = 'O';
+        ticTacToe.isSomethingFilledInTheBox = jasmine.createSpy();
+        ticTacToe.isSomethingFilledInTheBox.and.returnValue(false);
         ticTacToe.whenClicksMarkO = jasmine.createSpy();
 
         ticTacToe.whenClicksMarkSomething(event);
 
         expect(ticTacToe.whenClicksMarkO).toHaveBeenCalledWith(event);
     });
-    
+
     it('should MARK "X" if clicked in a box after O', () => {
         var event = {};
         ticTacToe.turnOfPlayer = 'X';
+        ticTacToe.isSomethingFilledInTheBox = jasmine.createSpy();
+        ticTacToe.isSomethingFilledInTheBox.and.returnValue(false);
         ticTacToe.whenClicksMarkX = jasmine.createSpy();
 
         ticTacToe.whenClicksMarkSomething(event);
 
         expect(ticTacToe.whenClicksMarkX).toHaveBeenCalledWith(event);
+    });
+
+    it('should MARK nothing if clicked in a box already filled with X', () => {
+        var event = {
+            target: {
+                innerText: 'X'
+            }
+        };
+        ticTacToe.whenClicksMarkX = jasmine.createSpy();
+        ticTacToe.whenClicksMarkO = jasmine.createSpy();
+
+        ticTacToe.whenClicksMarkSomething(event);
+
+        expect(ticTacToe.whenClicksMarkX).not.toHaveBeenCalled();
+        expect(ticTacToe.whenClicksMarkO).not.toHaveBeenCalled();
     });
 })

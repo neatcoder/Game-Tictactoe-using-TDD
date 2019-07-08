@@ -22,4 +22,16 @@ describe("TicTacToe Game", ()=>{
 
         expect(event.target.innerText).toBe('X');
     });
+
+    it("should mark O if clicked in a box", ()=>{
+        event={
+            target:{
+                innerText:""
+            }
+        }
+
+        ticTacToe.whenClicksMarkO(event);
+
+        expect(event.target.innerText).toBe('O');
+    });
 })

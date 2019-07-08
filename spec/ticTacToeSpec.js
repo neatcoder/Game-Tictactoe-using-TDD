@@ -10,4 +10,16 @@ describe("TicTacToe Game", ()=>{
         expect(ticTacToe.scoreOfPlayerX).toBe(0);
         expect(ticTacToe.scoreOfPlayerO).toBe(0);
     });
+
+    it("should mark X if clicked in a box", ()=>{
+        event={
+            target:{
+                innerText:""
+            }
+        }
+
+        ticTacToe.whenClicksMarkX(event);
+
+        expect(event.target.innerText).toBe('X');
+    });
 })

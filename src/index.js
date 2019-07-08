@@ -3,9 +3,10 @@ var TicTacToe = require('./views/TicTacToe');
 function makeTicTacToeGameGrid() {
     document.body.innerHTML = '<div class="grid-container" id="grid"></div>';
     var element;
-    for (i = 0; i < 9; i++) {
+    for (let i = 1; i < 10; i++) {
         element = document.createElement('div');
         element.className = 'grid-item';
+        element.dataset.sequence = i.toString();
         document.getElementById('grid').appendChild(element);
     }
 }

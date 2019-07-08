@@ -1,7 +1,9 @@
 class TicTacToe {
     constructor() {
-        this.scoreOfPlayerX = 0;
-        this.scoreOfPlayerO = 0;
+        this.sequenceOfPlayerX = [];
+        this.sequenceOfPlayerO = [];
+        this.winningSequence = ['1', '2', '3'];
+        this.winningPlayer = '';
         this.turnOfPlayer = "X";
     }
 
@@ -14,6 +16,7 @@ class TicTacToe {
     whenClicksMarkSomething(event) {
         if (this.turnOfPlayer === "X") {
             this.whenClicksMarkX(event);
+            this.addSequenceOfPlayerX(event)
         } else {
             this.whenClicksMarkO(event);
         }
@@ -25,16 +28,35 @@ class TicTacToe {
 
     whenClicksMarkX(event) {
         event.target.innerText = 'X';
-        this.changePlayerTurn("O")
+        this.changePlayerTurn("O");
     }
 
     whenClicksMarkO(event) {
         event.target.innerText = 'O';
-        this.changePlayerTurn("X")
+        this.changePlayerTurn("X");
     }
 
     changePlayerTurn(player) {
         this.turnOfPlayer = player;
     }
-};
+
+    addSequenceOfPlayerX(event) {
+        this.sequenceOfPlayerX.push(event.target.dataset.sequence);
+        if(this.isPlayerXWon()){
+            this.winningPlayer = 'X';
+        }
+    }
+
+    isPlayerXWon() {
+        let count = 0;
+        for (let i of this.winningSequence) {
+            for (let j of this.sequenceOfPlayerX) {
+                if (i === j) {
+                    count++;
+                }
+            }
+        }
+        return 3 === count ? true : false;
+    }
+}
 module.exports = TicTacToe;

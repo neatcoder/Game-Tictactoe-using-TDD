@@ -84,4 +84,8 @@ describe("TicTacToe Game", () => {
 
         expect(ticTacToe.whenClicksMarkSomething).not.toHaveBeenCalled();
     });
+
+    it('should player X win if his marking sequence is 123', () => {
+        expect(ticTacToe.isPlayerXWon).toHaveBeenCalled();
+    });
 })

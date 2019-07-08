@@ -4,13 +4,13 @@ global.window = dom.window;
 global.document = dom.window.document;
 var Game = require('../src/index');
 
-describe("Game initialization", ()=>{
+describe("Game initialization", () => {
     var game;
-    beforeEach(()=>{
+    beforeEach(() => {
         game = Game;
     });
 
-    it("should show something", ()=>{
+    it("should show something", () => {
         expect(document.body.innerHTML).not.toBe("");
     });
 })

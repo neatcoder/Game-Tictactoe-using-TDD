@@ -35,7 +35,7 @@ describe("TicTacToe Game", () => {
         expect(event.target.innerText).toBe('O');
     });
 
-    it('should MARK "O" if clicked in a box for the SECOND time', () => {
+    it('should MARK "O" if clicked in a box after X', () => {
         var event = {};
         ticTacToe.turnOfPlayer = 'O';
         ticTacToe.whenClicksMarkO = jasmine.createSpy();

@@ -20,7 +20,7 @@ class TicTacToe {
     }
 
     isSomethingFilledInTheBox(event) {
-        return event.target.innerText === "X" ? true : false;
+        return -1 === ["X", "O"].indexOf(event.target.innerText) ? false : true;
     }
 
     whenClicksMarkX(event) {

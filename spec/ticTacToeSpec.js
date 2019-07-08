@@ -71,4 +71,17 @@ describe("TicTacToe Game", () => {
 
         expect(ticTacToe.whenClicksMarkSomething).not.toHaveBeenCalled();
     });
+
+    it('should MARK nothing if clicked in a box already filled with O', () => {
+        var event = {
+            target: {
+                innerText: 'O'
+            }
+        };
+        ticTacToe.whenClicksMarkSomething = jasmine.createSpy();
+
+        ticTacToe.handleClickInTheBox(event);
+
+        expect(ticTacToe.whenClicksMarkSomething).not.toHaveBeenCalled();
+    });
 })

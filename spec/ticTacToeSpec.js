@@ -1,20 +1,20 @@
 var TicTacToe = require('../src/views/ticTacToe');
 
-describe("TicTacToe Game", ()=>{
+describe("TicTacToe Game", () => {
     var ticTacToe;
-    beforeEach(()=>{
+    beforeEach(() => {
         ticTacToe = new TicTacToe();
     });
 
-    it("should score be 0 for both players in the beginning of the match", ()=>{
+    it('should score be 0 for both players in the beginning of the match', () => {
         expect(ticTacToe.scoreOfPlayerX).toBe(0);
         expect(ticTacToe.scoreOfPlayerO).toBe(0);
     });
 
-    it("should mark X if clicked in a box", ()=>{
-        event={
-            target:{
-                innerText:""
+    it('should MARK "X" if clicked in a box', () => {
+        var event = {
+            target: {
+                innerText: ""
             }
         }
 
@@ -23,10 +23,10 @@ describe("TicTacToe Game", ()=>{
         expect(event.target.innerText).toBe('X');
     });
 
-    it("should mark O if clicked in a box", ()=>{
-        event={
-            target:{
-                innerText:""
+    it('should MARK "O" if clicked in a box', () => {
+        var event = {
+            target: {
+                innerText: ''
             }
         }
 

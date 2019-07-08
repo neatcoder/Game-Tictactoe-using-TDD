@@ -14,5 +14,5 @@ makeTicTacToeGameGrid();
 var tictactoe = new TicTacToe();
 
 for (const element of document.getElementsByClassName('grid-item')) {
-    element.addEventListener('click', tictactoe.whenClicksMarkX, false);
+    element.addEventListener('click', tictactoe.whenClicksMarkSomething, false);
 }
